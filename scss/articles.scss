@@ -1,0 +1,315 @@
+$ipad: 540px;
+$pro: 768px;
+$note:1280px;
+$desktop:1440px;
+$xldesktop:1920px;
+
+@mixin breakpoint($point) {
+    @if $point == default{
+        @media screen{
+            @content;
+        }
+    }
+    @else if $point == ipad{
+        @media screen and (min-width: $ipad) {
+            @content;
+        }
+    }
+    @else if $point == pro{
+        @media screen and (min-width: $pro) {
+            @content;
+        }
+    }    
+    @else if $point == note{
+        @media screen and (min-width: $note) {
+            @content;
+        }
+    }    
+    @else if $point == desktop{
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+    @else if $point == xldesktop{
+        @media screen and (min-width: $xldesktop) {
+            @content;
+        }
+    }
+}
+@mixin bgSetting($url,$size,$position,$attachment) {
+    background: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-attachment: $attachment;
+    background-repeat: no-repeat;
+}
+
+@mixin flex($flexDirection,$justifyContent,$alignItems) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+@mixin color($text:auto) {
+    @if $text == primary{
+        color: rgb(21, 82, 139);
+    }
+    @else if $text == secondary{
+        color: rgb(39, 179, 125);
+    }
+    @else if $text == white{
+        color: #fff;
+    }
+    @else {
+        color: #666666;
+    }
+}
+@mixin bgcolor($text:auto) {
+    @if $text == primary{
+        background-color: rgb(21, 82, 139);
+    }
+    @else if $text == secondary{
+        background-color: rgb(39, 179, 125);
+    }
+    @else if $text == white{
+        background-color: #fff;
+    }
+}
+
+.row{
+    @include breakpoint(pro){
+        margin: 0 15px !important;
+    }
+    .ord{
+        @include breakpoint(note){
+            &:nth-child(1){
+                order: 2;
+            }
+            &:nth-child(2){
+                order: 1;
+            }
+        }
+    }
+}
+
+.jumbotron{
+    height: 70vh;
+    .jum__sub-title{
+        @include color(primary);
+        @include bgcolor(white);
+        max-width: 200px;
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        top: 30%;
+        margin-bottom: 12px;
+        @include breakpoint(ipad){
+            max-width: 300px;
+            font-size: 46px;
+            line-height: 59.8px;
+            white-space: nowrap;
+            margin: 0 auto;        
+            margin-bottom: 20px;
+        }
+        @include breakpoint(note){
+            max-width: 470px;
+            font-size: 70px;
+            line-height: 91px;
+            margin-bottom: 36px;
+        }
+    }
+    .jum__title{
+        @include color(primary);
+        @include bgcolor(white);
+        max-width: 300px;
+        font-size: 56px;
+        width: 100%;
+        font-weight: 1000;
+        line-height: 64px;
+        top: 30%;
+        text-align: center;        
+        display: block;
+        @include breakpoint(ipad){
+            margin: 0 auto;
+            max-width: 400px;
+            font-size: 64px;
+            line-height: 83.2px;
+            white-space: nowrap;
+        }
+        @include breakpoint(pro){
+            max-width: 450px;
+            font-size: 70px;
+            line-height: 91px;
+        }
+        @include breakpoint(note){
+            max-width: 600px;
+            font-size: 86px;
+            line-height: 111.8px;
+        }
+    }
+}
+.prin-outter{
+    padding: 20px;
+    border: solid 1px #44b694;
+    background-color: #fff;
+    .title{
+        &::before{
+            content: '';
+            background-image: url('../image/seedling.svg');
+            width: 70px;
+            height: 30px;
+            position: absolute;
+            background-repeat: no-repeat;
+            top: 42%;
+            left: 0;
+            @include breakpoint(ipad){
+                width: 130px;
+                height: 45px;
+                left: 0%;                
+                top: 35%;
+            }
+            @include breakpoint(pro){
+                width: 190px;
+                height: 60px;
+                top: 30%;
+                left: 0%;                
+            }
+            @include breakpoint(note){
+                width: 260px;
+                height: 60px;
+                top: 22%;
+                left: 15%; 
+            }
+        }
+        &::after{
+            content: '';
+            background-image: url('../image/seedling.svg');
+            width: 70px;
+            height: 30px;
+            position: absolute;
+            background-repeat: no-repeat;
+            top: 42%;
+            right: 0;
+            transform: scaleX(-1);
+            @include breakpoint(ipad){
+                width: 130px;
+                height: 45px;
+                right: 0%;
+                top: 35%;
+            }
+            @include breakpoint(pro){
+                width: 190px;
+                height: 60px;
+                top: 30%;
+                right: 0%;
+            }
+            @include breakpoint(note){
+                width: 260px;
+                height: 60px;
+                top: 22%;
+                right: 15%;
+            }
+        }
+    }
+    .para{
+        text-align: justify;
+    }
+}
+    
+.month{
+    font-size: 55px;
+    top: 0;
+    color: #44b694;
+    letter-spacing: -4px;
+    font-weight: 700;
+    @include breakpoint(ipad){
+       font-size: 70px;
+    }
+    @include breakpoint(pro){
+        font-size: 90px;
+     }
+     @include breakpoint(desktop){
+        font-size: 150px;
+     }
+    span{
+        font-size: 28px;
+        font-weight: 200;
+    }
+    &.month--align{
+        text-align: left;
+        @include breakpoint(note){
+            text-align: right;
+        }
+    }
+}
+
+.article-outter{
+    .image-container{
+        &:before{
+            content: '';
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            background-attachment: initial;
+        }
+    }
+    .article-box{
+        padding: 0 15px;
+        @include breakpoint(pro){
+            padding: 0;
+        }
+        .list-dot{
+            border-bottom: solid 1px #e0e0e0;
+            margin: 24px 0;
+            @include breakpoint(pro){
+                margin: 0;
+            }
+        }
+        .list-title{
+            padding: 16px 0 16px 32px;
+            font-size: 24px;
+            line-height: 24px;
+            border-top: solid 1px #e0e0e0;
+            @include breakpoint(ipad){
+                font-size: 28px;
+                line-height: 28px;
+                padding: 32px 0 32px 46px;
+            }
+            @include breakpoint(pro){
+                font-size: 36px;
+                line-height: 36px;
+                padding: 32px 0 32px 46px;
+            }
+            &:before{
+                content: '';
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: linear-gradient(rgb(226, 196, 63),rgb(228, 157, 26));
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                transform: translate(0%,-50%);
+            }
+        }
+        .art-para{
+            font-size: 18px;
+            line-height: 30px;
+            @include color();
+            @include breakpoint(ipad){
+                font-size: 24px;
+                line-height: 39px;
+            }
+            @include breakpoint(pro){
+                font-size: 28px;
+                line-height: 45px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="tr"></div>
+    <!-- Star navbar -->
+    <div class="header">
+        <div class="bg">
+            <div class="panel panel-1 open"></div>
+            <div class="panel panel-2 open"></div>
+        </div>
+        <div class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <h1>yuding</h1>
+                </a>
+                <ul class="nav">
+                    <li class="nav-items">
+                        <a href="index.html#elem-course" class="nav-link">國小課程</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="index.html#mid-course" class="nav-link">國中課程</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="index.html#features" class="nav-link">教學特色</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="articles.html" class="nav-link">近期文章</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="index.html" class="nav-link">回到首頁</a>
+                    </li>
+                    <div class="address">
+                        <i>Icon</i>
+                        <div class="para">04-2251-0930</div>
+                        <div class="para">台中市南屯區公益路二段316-320號</div>
+                    </div>
+                </ul>
+                <a href="#!" class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End navbar -->
+
+    <!-- Start main -->
+    <div class="main">
+        <!-- Star form -->
+        <div class="apply-outter">
+            <div class="apply__form">
+                <div class="card js-fadeInLeft">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="apply__features" style="background-image: url('./image/bg5.jpg');"></div>
+                            <div class="sub-title">Easy<br>Learning</div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <form action="" class="form">
+                                <div class="title">報名試聽</div>
+                                <div class="form-item">
+                                    <label for="kid">學生姓名</label>
+                                    <input id="kid" type="text" placeholder="朱阿明">
+                                </div>
+                                <div class="form-item">
+                                    <label for="school">就讀學校</label>
+                                    <input id="school" type="text" placeholder="育鼎國小/育鼎國中">
+                                </div>
+                                <div class="form-item">
+                                    <label for="grade">就讀年級</label>
+                                    <input id="grade" type="text" placeholder="國小三年級/國中一年級">
+                                </div>
+                                <div class="form-item">
+                                    <label for="parent">聯絡人姓名</label>
+                                    <input id="parent" type="text" placeholder="王先生/蔡小姐">
+                                </div>
+                                <div class="form-item">
+                                    <label for="phone">聯絡人電話</label>
+                                    <input id="phone" type="phone" placeholder="0912345678">
+                                </div>
+                                <div class="form-item">
+                                    <label for="course">諮詢課程</label>
+                                    <select name="course" id="course" class="form__select">
+                                        <option value="1">國小課程</option>
+                                        <option value="2">國中課程</option>
+                                        <option value="3">私中專班</option>
+                                        <option value="4">冬/夏令營</option>
+                                        <option value="5">單科課輔</option>
+                                        <option value="6">其他</option>
+                                    </select>
+                                </div>
+                                <div class="form__btn--group">
+                                    <input type="submit" value="寄出" class="btn btn-primary">
+                                    <input type="reset" value="重填" class="btn btn-secondary">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End form -->
+    </div>
+    <!-- End main -->
+    <!-- Star footer -->
+    <div class="hero hero-primary">
+        <footer class="footer-wrapper js-fadeInUp">
+            <div class="footer-intro">
+                <h1>在地二十年專業教育品牌</h1>
+            </div>
+            <div class="tel-wrapper">
+                <div class="tel-label">TEL</div>
+                <div class="tel-num">04-2251-0930</div>
+            </div>
+            <div class="add-wrapper">
+                <div class="add">台中市南屯區公益路二段316-320號</div>
+                <div class="btn--center">
+                    <a target="_blank" href="https://goo.gl/maps/CSpFMMK1JuLzVmMU8" class="btn-type2 btn--sm">MAP</a>
+                </div>
+            </div>
+            <div class="copy-wrapper">
+                <span>Copyright ©YuDing All Rights Reserved.</span>
+            </div>
+        </footer>
+    </div>
+    <!-- End footer -->
+
+    
+
+</div>
+</body>
+<script src="./js/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="./js/style.js"></script>
+<script>
+$(document).ready(function () {
+    setTimeout(function(){
+        $('.panel').removeClass('open')
+        $('.tr').addClass('animated')
+        $('.main').addClass('animated')
+    },100)
+    setTimeout(function () {
+        $('.tr').removeClass('animated')
+        $('.main').removeClass('animated')
+    },1600)
+});
+</script>
+</html>

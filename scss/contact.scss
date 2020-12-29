@@ -1,0 +1,211 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+$ipad: 540px;
+$pro: 768px;
+$note:1280px;
+$desktop:1440px;
+$xldesktop:1920px;
+
+@mixin breakpoint($point) {
+    @if $point == default{
+        @media screen{
+            @content;
+        }
+    }
+    @else if $point == ipad{
+        @media screen and (min-width: $ipad) {
+            @content;
+        }
+    }
+    @else if $point == pro{
+        @media screen and (min-width: $pro) {
+            @content;
+        }
+    }    
+    @else if $point == note{
+        @media screen and (min-width: $note) {
+            @content;
+        }
+    }    
+    @else if $point == desktop{
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+    @else if $point == xldesktop{
+        @media screen and (min-width: $xldesktop) {
+            @content;
+        }
+    }
+}
+@mixin bgSetting($size,$position,$attachment) {
+    background-size: $size;
+    background-position: $position;
+    background-attachment: $attachment;
+    background-repeat: no-repeat;
+}
+
+@mixin flex($flexDirection,$justifyContent,$alignItems) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+@mixin color($text:auto) {
+    @if $text == primary{
+        color: rgb(21, 82, 139);
+    }
+    @else if $text == secondary{
+        color: rgb(39, 179, 125);
+    }
+    @else {
+        color: #666666;
+    }
+}
+@mixin bgcolor($text:auto) {
+    @if $text == primary{
+        background-color: rgb(21, 82, 139);
+    }
+    @else if $text == secondary{
+        background-color: rgb(39, 179, 125);
+    }
+    @else if $text == white{
+        background-color: #fff;
+    }
+}
+
+.wrapper{
+    background-color: rgb(224, 224, 224);
+    height: 100%;
+    width: 100%;
+    @include breakpoint(pro){
+        height: 100%;
+    }
+}
+.form{
+    @include breakpoint(pro){
+        padding: 32px 28px;
+    }
+}
+
+
+.apply-outter{
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    @include breakpoint(pro){
+        padding: 200px 0;
+    }
+    .apply__form{
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        @include breakpoint(pro){
+            border-radius: 16px;
+            width: 85%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .title{
+            margin: 12px 0;
+            @include breakpoint(pro){
+                margin: 0px 0 24px 0;
+            }
+        }
+    }
+    .card{
+        width: 100%;
+        height: 100%;
+        padding: 0 16px 24px 16px;
+        @include breakpoint(pro){
+            padding: 0;
+        }
+    }
+    .apply__features{
+        @include bgSetting(cover,center ,initial );
+        margin: 0 -15px;
+        height: 180px;
+        @include breakpoint(pro){
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+        }
+    }
+    .sub-title{
+        display: none;
+        @include breakpoint(pro){
+            display: flex;
+            padding:20px 12px;
+            @include color(primary);
+            background: white;
+            position: absolute;
+            left: 15px;
+            top: 20%;
+            font-size: 36px;
+            font-weight: 1000;
+        }
+    }
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 100%;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    @include breakpoint(pro){
+        @include flex(row,center ,center )
+    }
+    label{
+        margin-bottom: 8px;
+        font-size: 18px;
+        line-height: 29px;
+        @include breakpoint(pro){
+            margin-right: 24px;
+            min-width: 90px;
+        }
+    }
+    input{
+        background-color: #efefef;
+        border: none;
+        padding: 4px 12px;
+        line-height: 32px;
+        border-radius: 8px;
+        width: 100%;
+    }
+    .form__select{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+}
+.form__btn--group{
+    @include flex(row,center ,initial );
+    .btn{
+        max-width: 100px;
+        margin: 0px 8px;
+        padding: 8px 32px;
+    }
+}
+.footer-wrapper{
+    color: rgb(142, 230, 197);
+
+    .footer-intro{
+        h1{
+            color: #fff;
+        }
+    }
+}
+// .btn-type2{
+//     color: white;
+//     border-left: white 1px solid;
+//     border-right: white 1px solid;
+// }
