@@ -627,8 +627,7 @@ h3{
     justify-content: center;
     overflow: hidden;
     @include breakpoint(ipad){
-        max-width: 100%;
-        height: auto;
+        @include bgSetting( cover, center center ,fixed )
     }
     .jum__title{
         color: #fff;

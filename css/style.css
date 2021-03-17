@@ -1080,6 +1080,15 @@ h3 {
   overflow: hidden;
 }
 
+@media screen and (min-width: 540px) {
+  .jumbotron {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}
+
 .jumbotron .jum__title {
   color: #fff;
   font-size: 56px;
