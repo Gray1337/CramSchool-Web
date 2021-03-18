@@ -627,7 +627,7 @@ h3{
     display: flex;
     justify-content: center;
     overflow: hidden;
-    @include breakpoint(ipad){
+    @include breakpoint(pro){
         background-image: url(../image/bg2retina.jpg);
     }
     .jum__title{

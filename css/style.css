@@ -1081,7 +1081,7 @@ h3 {
   overflow: hidden;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 768px) {
   .jumbotron {
     background-image: url(../image/bg2retina.jpg);
   }
